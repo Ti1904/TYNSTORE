@@ -49,7 +49,7 @@
           <!-- single product -->
           <div class="col-lg-4 col-md-6" th:each="item : ${products}">
             <div class="single-product">
-              <img th:href="@{'/details?id=' + ${item.id}}" class="img-fluid" th:src="@{${item.imagePathDisplay}}" alt="" >
+              <a th:href="@{'/details?id=' + ${item.id}}"><img class="img-fluid" th:src="@{${item.imagePathDisplay}}" alt="" ></a>
               <div class="product-details">
                 <h6 class="text-center" th:text="${item.name}"></h6>
                 <div class="price">

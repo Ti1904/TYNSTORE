@@ -127,14 +127,26 @@ public class CartController {
         order.setStatus("Chờ xử lý");
         order.setCustomer(customer);
 
+
+
         for(Cart item : carts) {
             OrderDetail orderDetail = new OrderDetail();
             orderDetail.setQuantity(item.getQuantity());
             orderDetail.setPrices(item.getPrices());
             orderDetail.setProduct(item.getProduct());
+            List<Product> listProduct = productService.listAll();
+            for (Product item1 :listProduct )
+            {
+                if (item1.getId() == item.getProduct().getId())
+                {
+                    int sub = item1.getInventory();
+                    sub = sub - item.getQuantity();
+                    item1.setInventory(sub);
+                    productService.save(item1);
+                }
+            }
             order.getOrderDetails().add(orderDetail);
         }
-
         orderService.save(order);
         carts.clear();
 
