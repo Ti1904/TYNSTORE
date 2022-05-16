@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TYNStore-master/TYNAdmin/TYNAdmin.iml" filepath="$PROJECT_DIR$/TYNStore-master/TYNAdmin/TYNAdmin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TYNStore-master/TYNDatabase/TYNDatabase.iml" filepath="$PROJECT_DIR$/TYNStore-master/TYNDatabase/TYNDatabase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TYNSTORE.iml" filepath="$PROJECT_DIR$/.idea/TYNSTORE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TYNStore-master/TYNStore.iml" filepath="$PROJECT_DIR$/TYNStore-master/TYNStore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TYNStore-master/TYNUser/TYNUser.iml" filepath="$PROJECT_DIR$/TYNStore-master/TYNUser/TYNUser.iml" />
+    </modules>
+  </component>
+</project>

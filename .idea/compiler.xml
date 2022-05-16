@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="TYNDatabase" />
+        <module name="TYNAdmin" />
+        <module name="TYNUser" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TYNAdmin" target="11" />
+      <module name="TYNDatabase" target="11" />
+      <module name="TYNStore" target="11" />
+      <module name="TYNUser" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="TYNAdmin" options="-parameters" />
+      <module name="TYNDatabase" options="-parameters" />
+      <module name="TYNUser" options="-parameters" />
+    </option>
+  </component>
+</project>
