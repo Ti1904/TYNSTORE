@@ -163,7 +163,35 @@
       else
         name.setCustomValidity("Vui lòng nhập họ tên người nhận");
 
-      formSubmit.submit();
+      if(document.getElementById("name").value == null || document.getElementById("name").value == "")
+      {
+        alert("Vui lòng kiểm tra lại tên người nhận hàng, tên người nhận hàng không được để trống !");
+      }
+      else
+      {
+        if(document.getElementById("address").value == null || document.getElementById("address").value == "")
+        {
+          alert("Vui lòng kiểm tra lại địa chỉ người nhận hàng, địa chỉ nhận không được để trống !");
+        }
+        else
+        {
+          if(document.getElementById("phone").value == null || document.getElementById("phone").value == "")
+          {
+            alert("Vui lòng kiểm tra lại số điện thoại người nhận hàng, số điện thoại không được để trống !");
+          }
+          else
+          {
+            if(document.getElementById("phone").value.length != 10)
+            {
+              alert("Số điện thoại phải có 10 số");
+            }
+            else
+            {
+              formSubmit.submit();
+            }
+          }
+        }
+      }
     }
 </script>
 
