@@ -1,9 +1,12 @@
 package com.tynadmin.controller;
 
+import com.tynadmin.repository.CustomersRepository;
 import com.tynadmin.service.CategoryService;
+import com.tynadmin.service.CustomerService;
 import com.tynadmin.util.FileUploadUtils;
 import com.tynadmin.util.RootPathImageUtils;
 import com.tynentity.Category;
+import com.tynentity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -65,6 +68,22 @@ public class CategoryController {
     @GetMapping("/delete")
     public String delete(Integer id) {
         categoryService.delete(id);
+        return "redirect:/categories";
+    }
+
+    @GetMapping("/unactive")
+    public String unActive(Integer id){
+        Category categories  = categoryService.get(id);
+        categories.setStatus("không hoạt động");
+        categoryService.saveOrUpdate(categories);
+        return "redirect:/categories";
+    }
+
+    @GetMapping("/active")
+    public String active(Integer id){
+        Category categories  = categoryService.get(id);
+        categories.setStatus("hoạt động");
+        categoryService.saveOrUpdate(categories);
         return "redirect:/categories";
     }
 }

@@ -14,6 +14,7 @@ public class Category {
     private Integer id;
     private String name;
     private String image;
+    private String status;
 
     @OneToMany(mappedBy = "category")
     private Set<Product> products = new HashSet<>();
@@ -40,6 +41,14 @@ public class Category {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Set<Product> getProducts() {

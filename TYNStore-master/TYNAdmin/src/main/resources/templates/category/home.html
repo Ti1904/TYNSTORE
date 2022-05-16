@@ -42,6 +42,7 @@
                 <th scope="col" class="text-center">ID</th>
                 <th scope="col" class="text-center">Hình Ảnh</th>
                 <th scope="col">Tên thể loại</th>
+                <th scope="col">Trạng thái</th>
                 <th scope="col" class="text-center"></th>
               </tr>
               </thead>
@@ -52,12 +53,15 @@
                   <img th:src="@{${item.imagePathDisplay}}" style="width: 100px"/>
                 </td>
                 <td>[[${item.name}]]</td>
+                <td>[[${item.status}]]</td>
                 <td class="text-center">
                   <a class="btn btn-phoenix-warning me-1 mb-1" th:href="@{'/categories/update?id=' + ${item.id}}">
                     <span data-feather="edit"></span>
                   </a>
                   <a class="btn-delete-confirm btn btn-phoenix-danger me-1 mb-1" th:data-id="${item.id}">
                     <span data-feather="trash"></span>
+                  </a>
+                  <a class="btn-warning btn btn-phoenix-danger me-1 mb-1" th:data-id="${item.id}">
                   </a>
                 </td>
               </tr>
@@ -84,8 +88,20 @@
   $(document).ready(function() {
     $(".btn-delete-confirm").on('click', function() {
       let id = $(this).attr("data-id");
-      let url = "[[@{/categories/delete?id=}]]" + id;
-      showModalConfirm('Cảnh báo', 'Bạn có chắn chắn muốn xóa dữ liệu với id: ' + id, url);
+      let url = "[[@{/categories/unactive?id=}]]" + id;
+      showModalConfirm('Cảnh báo', 'Bạn có chắn chắn muốn ngừng kinh doanh mặt hàng với id: ' + id, url);
+      //let url = "[[@{/categories/delete?id=}]]" + id;
+      //showModalConfirm('Cảnh báo', 'Bạn có chắn chắn muốn xóa dữ liệu với id: ' + id, url);
+    })
+  })
+
+  $(document).ready(function() {
+    $(".btn-warning").on('click', function() {
+      let id = $(this).attr("data-id");
+      let url = "[[@{/categories/active?id=}]]" + id;
+      showModalConfirm('Cảnh báo', 'Bạn có chắn chắn muốn kinh doanh lại mặt hàng với id: ' + id, url);
+      //let url = "[[@{/categories/delete?id=}]]" + id;
+      //showModalConfirm('Cảnh báo', 'Bạn có chắn chắn muốn xóa dữ liệu với id: ' + id, url);
     })
   })
 

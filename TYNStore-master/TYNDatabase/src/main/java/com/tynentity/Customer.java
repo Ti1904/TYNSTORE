@@ -19,6 +19,21 @@ public class Customer {
     @Column(nullable = false)
     private String password;
 
+    @Column
+    private String name;
+
+    @Column
+    private String address;
+
+    @Column
+    private String phone;
+
+    @Column
+    private String birthday;
+
+    @Column
+    private String status;
+
     @OneToMany(mappedBy = "customer")
     private Set<Order> orders = new HashSet<>();
 
@@ -45,6 +60,26 @@ public class Customer {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getName() {return name;}
+
+    public  void setName(String name) {this.name = name;}
+
+    public String getAddress() {return address;}
+
+    public  void setAddress(String address) {this.address = address;}
+
+    public String getPhone() {return phone;}
+
+    public  void setPhone(String name) {this.phone = phone;}
+
+    public String getBirthday() {return birthday;}
+
+    public  void setBirthday(String birthday) {this.birthday = birthday;}
+
+    public String getStatus() {return status;}
+
+    public  void setStatus(String status) {this.status = status;}
 
     public Set<Order> getOrders() {
         return orders;

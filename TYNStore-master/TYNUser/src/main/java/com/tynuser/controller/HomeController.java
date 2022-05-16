@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 @Controller
@@ -96,4 +97,13 @@ public class HomeController {
     public String findResult(){
         return "findResult";
     }
+
+    @GetMapping("/search")
+    public String search(Model model)
+    {
+        List<Product> products = productService.listAll();
+        model.addAttribute("products", products);
+        return "search";
+    }
+
 }

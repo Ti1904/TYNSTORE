@@ -39,19 +39,23 @@
             <table class="table table-bordered">
               <thead>
               <tr>
-                <th scope="col" class="text-center">ID</th>
+                <th scope="col" class="text-center">Họ tên</th>
                 <th scope="col" class="text-center">User Name</th>
-                <th scope="col">Password</th>
+                <th scope="col" class="text-center">Địa chỉ</th>
+                <th scope="col" class="text-center">Ngày sinh</th>
+                <th scope="col" class="text-center">Số điện thoại</th>
+                <th scope="col" class="text-center">Trạng thái kích hoạt</th>
                 <th scope="col" class="text-center"></th>
               </tr>
               </thead>
               <tbody>
               <tr class="align-middle" th:each="item : ${customers}">
-                <th scope="row" class="text-center">[[${item.id}]]</th>
-                <td class="text-center">
-                  [[${item.username}]]
-                </td>
-                <td>[[${item.password}]]</td>
+                <th scope="row" class="text-center">[[${item.name}]]</th>
+                <td class="text-center">[[${item.username}]]</td>
+                <td class="text-center">[[${item.address}]]</td>
+                <td class="text-center">[[${item.birthday}]]</td>
+                <td class="text-center">[[${item.phone}]]</td>
+                <td class="text-center">[[${item.status}]]</td>
                 <td class="text-center">
                   <a class="btn btn-phoenix-warning me-1 mb-1" th:href="@{'/categories/update?id=' + ${item.id}}">
                     <span data-feather="edit"></span>
