@@ -61,6 +61,12 @@
                 </div>
               </div>
               <div class="row mb-3">
+                <label th:for="inventory" class="col-sm-2 col-form-label col-form-label-lg">Số lượng tồn</label>
+                <div class="col-sm-10">
+                  <input th:field="*{inventory}" class="form-control form-control-lg" required type="number" min="1" step="1" placeholder="vd: 1">
+                </div>
+              </div>
+              <div class="row mb-3">
                 <label th:for="fileUpload" class="col-sm-2 col-form-label col-form-label-lg">Hình ảnh</label>
                 <div class="col-sm-10">
                   <input th:if="*{id == null}" name="fileUpload" th:id="fileUpload" class="form-control" required type="file" accept="image/png, image/jpeg">

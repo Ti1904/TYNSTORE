@@ -15,6 +15,7 @@ public class Product {
     private String name;
     private String image;
     private double prices = 1000;
+    private Integer inventory;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
@@ -58,6 +59,12 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public Integer getInventory() { return inventory;}
+
+    public void setInventory(Integer inventory) {
+        this.inventory = inventory;
     }
 
     @Transient

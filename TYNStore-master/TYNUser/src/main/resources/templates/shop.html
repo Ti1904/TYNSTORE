@@ -51,9 +51,14 @@
             <div class="single-product">
               <img th:href="@{'/details?id=' + ${item.id}}" class="img-fluid" th:src="@{${item.imagePathDisplay}}" alt="" >
               <div class="product-details">
-                <h6 th:text="${item.name}"></h6>
+                <h6 class="text-center" th:text="${item.name}"></h6>
                 <div class="price">
-                  <h6 th:text="${item.formatPrices()}"></h6>
+                  <h6>Giá: </h6>
+                  <h6 class="text-center" style="color: #6610f2" th:text="${item.formatPrices()}"></h6>
+                </div>
+                <div class="price">
+                  <h6>Còn: </h6>
+                  <h6 th:text="${item.inventory}"></h6>
                 </div>
                 <div class="prd-bottom">
                   <a th:href="@{'/carts/add?productId=' + ${item.id} + '&quantity=1'}" class="social-info">
