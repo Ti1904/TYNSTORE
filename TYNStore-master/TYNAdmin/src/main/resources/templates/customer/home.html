@@ -45,7 +45,6 @@
                 <th scope="col" class="text-center">Ngày sinh</th>
                 <th scope="col" class="text-center">Số điện thoại</th>
                 <th scope="col" class="text-center">Trạng thái kích hoạt</th>
-                <th scope="col" class="text-center"></th>
               </tr>
               </thead>
               <tbody>
@@ -56,14 +55,6 @@
                 <td class="text-center">[[${item.birthday}]]</td>
                 <td class="text-center">[[${item.phone}]]</td>
                 <td class="text-center">[[${item.status}]]</td>
-                <td class="text-center">
-                  <a class="btn btn-phoenix-warning me-1 mb-1" th:href="@{'/categories/update?id=' + ${item.id}}">
-                    <span data-feather="edit"></span>
-                  </a>
-                  <a class="btn-delete-confirm btn btn-phoenix-danger me-1 mb-1" th:data-id="${item.id}">
-                    <span data-feather="trash"></span>
-                  </a>
-                </td>
               </tr>
               </tbody>
             </table>

@@ -26,6 +26,10 @@ public class CustomerService {
         return (List<Customer>) customersRepository.findAll();
     }
 
+    public Customer saveOrUpdate(Customer customer) {
+        return customersRepository.save(customer);
+    }
+
     public void delete(Integer id) {
         Customer customer = get(id);
         FileUploadUtils.cleanDir(RootPathImageUtils.CATEGORY + "/" + id + "/");
