@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="TYNDatabase" />
         <module name="TYNAdmin" />
+        <module name="TYNDatabase" />
         <module name="TYNUser" />
       </profile>
     </annotationProcessing>
