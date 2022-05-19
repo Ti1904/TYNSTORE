@@ -59,7 +59,6 @@ public class HomeController {
     @PostMapping("/register")
     public String register(Customer customer, RedirectAttributes redirectAttributes) {
         Customer customerDb = customerService.getByUserName(customer.getUsername());
-
         if(customerDb != null) {
             redirectAttributes.addFlashAttribute("message", "Tài khoản đã tồn tại");
             return "redirect:/register";

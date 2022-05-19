@@ -46,6 +46,18 @@
               <input type="password" class="form-control" onchange="checkPasswordMatch(this)" id="re-password" name="re-password" placeholder="Nhập lại mật khẩu" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nhập lại mật khẩu'">
             </div>
             <div class="col-md-12 form-group">
+              <input type="text" class="form-control"  id="name" name="name" placeholder="Họ và tên" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Họ và tên'">
+            </div>
+            <div class="col-md-12 form-group">
+              <input type="text" class="form-control"  id="phone" name="phone" placeholder="Số điện thoại" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Số điện thoại'">
+            </div>
+            <div class="col-md-12 form-group">
+              <input type="text" class="form-control"  id="address" name="address" placeholder="Địa chỉ" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Địa chỉ'">
+            </div>
+            <div class="col-md-12 form-group">
+              <input type="text" class="form-control"  id="birthday" name="birthday" placeholder="Ngày sinh (ex: 2001-08-18)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ngày sinh (ex: 2001-08-18)'">
+            </div>
+            <div class="col-md-12 form-group">
               <button type="submit" value="submit" class="primary-btn">Đăng Ký</button>
               <a th:href="@{/login}">Đăng Nhập</a>
             </div>

@@ -27,7 +27,9 @@ public class UserController {
     }
 
     @GetMapping("")
-    public String index() {
+    public String index(@AuthenticationPrincipal CustomerDetails customerDetails,Model model) {
+        Customer customer = customerService.getByUserName(customerDetails.getUsername());
+        model.addAttribute("customer",customer);
         return "user";
     }
 
