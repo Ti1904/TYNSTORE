@@ -117,7 +117,8 @@ public class CartController {
     }
 
     @PostMapping("/check-out")
-    public String checkOut(@AuthenticationPrincipal CustomerDetails customerDetails, String name, String phone, String address, HttpServletRequest request) {
+    public String checkOut(@AuthenticationPrincipal CustomerDetails customerDetails, String name, String phone,
+                           String address, HttpServletRequest request) {
         Set<Cart> carts = getCart(request.getSession());
         Customer customer = customerService.getByUserName(customerDetails.getUsername());
         Order order = new Order();
@@ -126,9 +127,6 @@ public class CartController {
         order.setRecipientPhone(phone);
         order.setStatus("Chờ xử lý");
         order.setCustomer(customer);
-
-
-
         for(Cart item : carts) {
             OrderDetail orderDetail = new OrderDetail();
             orderDetail.setQuantity(item.getQuantity());

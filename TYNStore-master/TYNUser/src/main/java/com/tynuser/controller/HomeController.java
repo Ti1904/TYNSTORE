@@ -38,6 +38,7 @@ public class HomeController {
         return "index";
     }
 
+
     @GetMapping("details")
     public String details(Integer id, Model model) {
         Product product = productService.get(id);

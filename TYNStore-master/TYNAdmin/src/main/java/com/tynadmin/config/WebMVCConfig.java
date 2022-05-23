@@ -13,6 +13,7 @@ public class WebMVCConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+
         Path adminImagesDir = Paths.get(RootPathImageUtils.ADMIN);
         String  adminImagePath = adminImagesDir.toFile().getAbsolutePath();
         registry.addResourceHandler("/" + RootPathImageUtils.ADMIN + "/**").addResourceLocations("file:/" + adminImagePath + "/");
